@@ -10,7 +10,7 @@ object ScalaWordCount {
     val words = lines.flatMap(_.split(" ")).sorted
 
     // 把每个单词 生成一个一个的tuple 元组
-    val tuples = words.map((_ -> 1))
+    val tuples = words.map(_ -> 1)
     println(tuples)
     // 以key (单词) 进行分组  外面是一个大的map map里的value 是一个list list里的东西是一个一个元组
     val groups =  tuples.groupBy(_._1)
