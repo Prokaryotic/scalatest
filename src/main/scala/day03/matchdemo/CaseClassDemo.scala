@@ -2,7 +2,9 @@ package day03.matchdemo
 
 import scala.util.Random
 
-
+/**
+  * 样例类
+  */
 object CaseClassDemo {
   def main(args: Array[String]): Unit = {
 
@@ -13,8 +15,6 @@ object CaseClassDemo {
       case SubmiTask(port, task) =>println("SubmiTask")
       case HeartBeat(time) =>println("HeartBeat")
     }
-
-
   }
 }
 
