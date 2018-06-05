@@ -50,7 +50,7 @@ object RichFile1{
     // 隐式的实现这个调用过程read  RichFile("F:\\test\\io\\测试文件2.txt") 的过程被import day04.FilePredef.fileToRichFile 代替了
     //  这个类是我自己建立的  可以声明在外面package day04 的下面 实现全局调用
 
-    val lines2 = "F:\\test\\io\\测试文件2.txt".read() //引用隐式转换函数后 等价于 RichFile("F:\\test\\io\\测试文件2.txt").read()
+//    val lines2 = "F:\\test\\io\\测试文件2.txt".read() //引用隐式转换函数后 等价于 RichFile("F:\\test\\io\\测试文件2.txt").read()
 
   }
 

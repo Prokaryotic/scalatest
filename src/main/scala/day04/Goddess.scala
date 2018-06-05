@@ -1,5 +1,8 @@
 package day04
 
+/**
+  * 隐式函数
+  */
 object ImplicitContext {
 
   implicit object OderingGirl extends Ordering[Girl] {
@@ -38,4 +41,5 @@ object Goddess {
 
 class Girl(val name: String, var faceValue: Int) {
 
+  override def toString = s"Girl($name, $faceValue)"
 }
