@@ -1,7 +1,7 @@
 package day04
 
 /**
-  * 隐式函数
+  * 隐式转换
   */
 object ImplicitContext {
 
@@ -11,12 +11,16 @@ object ImplicitContext {
 
 }
 
+// [T: Ordering] 必须存在一个“B[A]”的隐士值。  是有B[A]的隐士参数 比如有  implicit object OderingGirl extends Ordering[Girl]
+
 class Goddess[T: Ordering](val v1: T, val v2: T) {
 
-  def choose()(implicit ord: Ordering[T]) = if (ord.gt(v1, v2)) v1 else v2
+  // ord就相当于 OderingGirl 在隐式 完成的时候如下面第29行import
+  def choose()(implicit ord: Ordering[T]) = if (ord.compare(v1, v2)>0) v1 else v2
 
 }
 
+// ctrl + d  复制当前行
 object Goddess {
 
   def main(args: Array[String]): Unit = {
