@@ -23,14 +23,11 @@ object SparkWC {
 
     // 读取数据  这是生成 RDD的一种方式
     val lines = sc.textFile(args(0))
-
     // 处理数据
     val words = lines.flatMap(_.split(" "))
     val paired = words.map(_ -> 1)
     val reduced = paired.reduceByKey(_+_)
     val res = reduced.sortBy(_._2,false)
-
-
     // 保存
     res.saveAsTextFile(args(1))
     // 打印一下
