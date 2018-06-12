@@ -25,7 +25,14 @@ object DataFrameDemo {
 
     //导入隐饰操作，否则RDD无法调用toDF方法
     import sparkSession.implicits._
-    val personDataFrame = personRdd.toDF
+    val psonDF = personRdd.toDF
+
+    // 显示 表的结构
+    psonDF.show
+
+
+
+
 
   }
 
