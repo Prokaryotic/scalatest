@@ -35,6 +35,7 @@ object InferringSchema {
     res.write.json("")
 
     sc.stop
+
   }
 }
 
