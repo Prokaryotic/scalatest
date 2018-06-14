@@ -100,7 +100,7 @@ object SparkRDDExercise {
     // TODO 第一种 sortBy(第一个参数表示 按照元组里的什么进行排序 第二个表示是否是 升序 true 是升序 false 是降序)
 //        val res = rdd11.reduceByKey(_+_).sortBy(_._2,false)
     // TODO 第二种 两极反转 7777777777777
-    //    val res = rdd11.reduceByKey(_+_).map(e =>(e._2,e._1)).sortByKey(false).map(e=>(e._1,e._2))
+//        val res = rdd11.reduceByKey(_+_).map(e =>(e._2,e._1)).sortByKey(false).map(e=>(e._1,e._2))
 
     // TODO 笛卡尔积
     // 结果 ArrayBuffer(((tom,1),(jerry,2)), ((tom,1),(tom,3)), ((tom,1),(shuke,2)), ((tom,1),(kitty,5)), ((jerry,3),(jerry,2)), ((jerry,3),(tom,3)), ((jerry,3),(shuke,2)), ((jerry,3),(kitty,5)), ((kitty,2),(jerry,2)), ((kitty,2),(tom,3)), ((kitty,2),(shuke,2)), ((kitty,2),(kitty,5)), ((shuke,1),(jerry,2)), ((shuke,1),(tom,3)), ((shuke,1),(shuke,2)), ((shuke,1),(kitty,5)))

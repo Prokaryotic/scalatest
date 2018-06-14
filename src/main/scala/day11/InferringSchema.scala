@@ -40,4 +40,4 @@ object InferringSchema {
 }
 
 
-case class Person(id: Int, name: String, age: Int, faceValue: Int)
+//case class Person(id: Int, name: String, age: Int, faceValue: Int)
