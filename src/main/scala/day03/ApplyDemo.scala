@@ -36,7 +36,6 @@ object ApplyDemo {
     } else {
       Some(applyDemo.name.split(" "))
     }
-
   }
 }
 
