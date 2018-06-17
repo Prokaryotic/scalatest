@@ -9,7 +9,7 @@ object FilePredef {
   implicit def fileToRichFile(filePath: String): RichFile = RichFile(filePath)
 
   //对应 ViewBoundDemo
-  // 隐式转换函数 转换成拎一个对象 并实现里面的特性  传入一个g:Girl =>返回一个Ordering[Girl]
+  // 隐式转换函数 转换成拎一个对象 并实现里面的特性  传入一个g:Girl =>返回一个Ordered[Girl] 并实现了compare
   implicit val selectGirl = (g: Girl) => new Ordered[Girl] {
     override def compare(that: Girl): Int = {
       if (g.faceValue == that.faceValue) {

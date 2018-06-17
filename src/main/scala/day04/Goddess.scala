@@ -11,7 +11,9 @@ object ImplicitContext {
 
 }
 
-// [T: Ordering] 必须存在一个“B[A]”的隐士值。  是有B[A]的隐士参数 比如有  implicit object OderingGirl extends Ordering[Girl]
+// [T: Ordering] 必须存在一个“B[A]”的隐士值。
+// (implicit ord: Ordering[T])
+// 是有B[A]的隐士参数 比如有  implicit object OderingGirl extends Ordering[Girl]
 
 class Goddess[T: Ordering](val v1: T, val v2: T) {
 
@@ -25,15 +27,17 @@ object Goddess {
 
   def main(args: Array[String]): Unit = {
     // 比较2个自定义对象里的属性
-
-    import ImplicitContext.OderingGirl
-
     val g1 = new Girl("范冰冰", 95)
     val g2 = new Girl("范小爷", 96)
 
     val goddess = new Goddess(g1, g2)
 
+
+    // 因为object OderingGirl 是一个静态类 这里相当于 隐式的传入了一个静态对象  goddess.choose()(OderingGirl)
+    import ImplicitContext.OderingGirl
     val myGoddess = goddess.choose()
+
+
 
     println(myGoddess)
 
