@@ -33,6 +33,7 @@ class Master(val masterHost: String, val masterPort: Int) extends Actor {
         id2Worker += (id -> workerInfo)
         workers +=workerInfo
         println("a worker registered")
+        // 回发 就是发送过来的 那个对象
         sender ! RegisteredWork(s"akka.tcp://${Master.MASTER_SYSTEM}"+
         s"@$masterHost:$masterPort/user/${Master.MASTER_ACTOR}")
       }
